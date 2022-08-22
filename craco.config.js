@@ -1,5 +1,7 @@
 const CracoLessPlugin = require("craco-less");
+const path = require('path')
 
+const resolve = (paths) => path.resolve(__dirname, 'src', paths);
 module.exports = {
   style: {
     modules: {
@@ -29,7 +31,16 @@ module.exports = {
     },
   ],
   webpack: {
-    alias: {},
+
+    alias: {
+      '@pages': resolve('pages'),
+      '@routes': resolve('routes'),
+      '@context': resolve('context'),
+      '@constants': resolve('constants'),
+      '@helpers': resolve('helpers'),
+      '@components': resolve('components'),
+      '@api': resolve('apiClient'),
+    },
     configure: (webpackConfig, { env, paths }) => {
       return webpackConfig;
     },

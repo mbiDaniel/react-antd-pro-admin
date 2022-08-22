@@ -1,7 +1,21 @@
-const CracoLessPlugin = require('craco-less')
-
+const CracoLessPlugin = require("craco-less");
 
 module.exports = {
+  style: {
+    modules: {
+      localIdentName: "",
+    },
+    css: {
+      loaderOptions: (cssLoaderOptions, { env, paths }) => {
+        return cssLoaderOptions;
+      },
+    },
+    sass: {
+      loaderOptions: (sassLoaderOptions, { env, paths }) => {
+        return sassLoaderOptions;
+      },
+    },
+  },
   plugins: [
     {
       plugin: CracoLessPlugin,
@@ -14,4 +28,10 @@ module.exports = {
       },
     },
   ],
+  webpack: {
+    alias: {},
+    configure: (webpackConfig, { env, paths }) => {
+      return webpackConfig;
+    },
+  },
 };

@@ -25,8 +25,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "env-cmd -e development craco start",
+    "build": "env-cmd -e production craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

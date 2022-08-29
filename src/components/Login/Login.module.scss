@@ -3,6 +3,7 @@
 *{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    font-weight: 100;
 }
 
 body{
@@ -27,7 +28,7 @@ body{
     width:70em;
     display:flex;
     justify-content:space-between;
-    column-gap:4em;
+    column-gap: 2em;
 }
 
 .imageSide,
@@ -41,12 +42,10 @@ loginSide{
 .imageSide{
     border-right:.1em #cccccc solid;
     margin-bottom: 2em;
-    flex:1;
 }
 
 .loginSide{
 margin-top:2em;
-flex:1;
 }
 
 img{
@@ -57,14 +56,14 @@ img{
 
 .loginSide > h3{
     color:#3e3f5e;
-    font-size: 1rem;
+    font-size: .9rem;
     text-align: left;
     padding-bottom: 2em;
 }
 
 .loginSide > h3::before{
     content: '';
-    justify-content: space-between;
+    margin-bottom: 10em;
     width: 2em;
     height: .25em;
     border-radius: 1em;

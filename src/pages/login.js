@@ -1,11 +1,8 @@
 import React from "react";
+import LoginComponent from '@components/Login/index';
 
-const Login = () => (
-
-    <form>
-        <label>Login</label>
-    </form>
-
-);
-
-export default Login;
+export default function Login () {
+    return (
+    <LoginComponent />
+    );
+};

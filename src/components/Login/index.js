@@ -30,7 +30,7 @@ const Login = () =>(
                     <div className={styles.pwd}><Button style={{color:'gray'}} type="link" htmlType="button">
                         Forget your password?
                     </Button></div>
-                    <div className={styles.help}><Button style={{color:'#a457c5'}} type="link" htmlType="button">
+                    <div className={styles.help}><Button style={{color:'#2aade0'}} type="link" htmlType="button">
                         <b>Get help signed in.</b>
                     </Button>
                     </div>

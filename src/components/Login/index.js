@@ -8,7 +8,7 @@ import Input from '@components/base/Input';
 
 const Login = () =>(
     <div>
-        <div className={styles.logo}>Logo</div>
+    
         <div className={styles.container}>
             {/* image side */}
             <div className={styles.imageSide}> 

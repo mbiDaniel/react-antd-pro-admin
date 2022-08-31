@@ -2,6 +2,9 @@
   "name": "react-antd-pro-admin",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "16"
+  },
   "dependencies": {
     "@ant-design/charts": "^1.4.2",
     "@craco/craco": "^6.4.5",
@@ -27,7 +30,7 @@
   },
   "scripts": {
     "start": "env-cmd -e development craco start",
-    "build": "env-cmd -e production craco build",
+    "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject"
   },

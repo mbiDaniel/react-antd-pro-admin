@@ -143,11 +143,13 @@ Form> input[type=password]{
         display:flex;
         align-items: center;
         justify-content:center;
-        column-gap: 3em;
     }
 
     .imageSide{
         display: none;
+    }
+    .img{
+        display:none
     }
 
     .loginSide{

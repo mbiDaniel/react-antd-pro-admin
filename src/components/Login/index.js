@@ -27,7 +27,7 @@ const Login = () =>(
                         LOGIN
                         </Button>
                     </Form.Item>
-                    <div className={styles.pwd}><Button style={{color:'gray'}} type="link" htmlType="button">
+                    <div className={styles.pwd}><Button style={{color:'gray'}} type="link" htmlType="button" >
                         Forget your password?
                     </Button></div>
                     <div className={styles.help}><Button style={{color:'#2aade0'}} type="link" htmlType="button">

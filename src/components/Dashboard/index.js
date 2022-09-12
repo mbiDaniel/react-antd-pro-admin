@@ -1,17 +1,20 @@
 import React,{useState} from 'react';
+import BreadCrumb from '@components/Breadcrumb/BreadCrumb';
 // import {Menu, MenuItem, ProSidebar, SidebarContent, SidebarFooter } from 'react-pro-sidebar';
-import styles from './Dashboard.module.scss';
+// import styles from './Dashboard.module.scss';
 // icons
-import {HiLockClosed, HiOutlineMenuAlt3} from 'react-icons/hi';
-import {IoMdMenu, IoMdCalendar,IoIosChatboxes} from  'react-icons/io';
+import {HiLockClosed} from 'react-icons/hi';
+import {IoMdCalendar,IoIosChatboxes} from  'react-icons/io';
 import {MdDashboard, MdEmail} from 'react-icons/md';
 import {BiTask} from 'react-icons/bi';
 import {GiTicket} from 'react-icons/gi';
 import {RiFile3Fill, RiBuilding2Fill} from 'react-icons/ri';
 import { AiFillSetting } from 'react-icons/ai';
 import {BsBellFill} from 'react-icons/bs';
-import { Avatar, Layout, Typography, Badge, Menu, Breadcrumb} from 'antd';
-import { UserOutlined, MailFilled } from '@ant-design/icons';
+import { Avatar, Layout, Typography, Badge, Menu} from 'antd';
+import {MailFilled } from '@ant-design/icons';
+import { Link } from 'react-router-dom';
+import Tickets from '@pages/Tickets';
 
 
 const {Sider , Content, Header} = Layout;
@@ -23,95 +26,52 @@ function getItem(label, key, icon, children, type){
     };
 }
 
-// const routes = [
-//     {
-//       path: 'index',
-//       breadcrumbName: 'home',
-//       children: [
-//         {
-//             path: 'index',
-//             breadcrumbName: 'home', 
-//         },{
-//             path: 'first',
-//       breadcrumbName: 'Dashboard',
-//         },{
-//             path: 'second',
-//       breadcrumbName: 'Chat',
-//         },{
-//             path: 'third',
-//       breadcrumbName: 'Email',
-//         },{
-//             path: 'fourth',
-//       breadcrumbName: 'Calendar',
-//         },{
-//             path: 'fifth',
-//       breadcrumbName: 'Task',
-//         },{
-//             path: 'sixth',
-//       breadcrumbName: 'Tickets',
-//         },{
-//             path: 'seventh',
-//       breadcrumbName: 'File',
-//         },{
-//             path: 'eighth',
-//       breadcrumbName: 'Companies',
-//         },{
-//             path: 'nineth',
-//       breadcrumbName: 'Authentification',
-//         },{
-//             path: 'tenth',
-//       breadcrumbName: 'Settings',
-//         }
-//       ]
-//     }
-
-// ]
 
 const items = [
-    getItem('Dashboard', '1' , <MdDashboard/>,[
-        getItem('Option 5', '5',null, [
-            getItem('Option 1', 'sub1'),
-            getItem('Option 2', 'sub2'),
-          ]),
-        getItem('Option 6', '6'),
-      ]),
-    getItem('Chat', '2' , <IoIosChatboxes/>,[
+    getItem(<Link to="/">Dashboard</Link>, '1' , <MdDashboard/>),
+    getItem(<Link to="/">Chat</Link>, '2' , <IoIosChatboxes/>,[
+      getItem('Option 5', '5',null, [
+          getItem('Option 1', 'sub1'),
+          getItem('Option 2', 'sub2'),
+        ]),
+      getItem('Option 6', '6'),
+    ]),
+    getItem(<Link to="/">Email</Link>, '3' , <MdEmail/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Email', '3' , <MdEmail/>,[
+    getItem(<Link to="/">Calendar</Link>, '4' , <IoMdCalendar/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Calendar', '4' , <IoMdCalendar/>,[
+    getItem(<Link to="/">Task</Link>, '5' , <BiTask/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Task', '5' , <BiTask/>,[
+    getItem(<Link to="/">Tickets</Link>, '6' , <GiTicket/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Tickets', '6' , <GiTicket/>,[
+    getItem(<Link to="/">File</Link>, '7' , <RiFile3Fill/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('File', '7' , <RiFile3Fill/>,[
+    getItem(<Link to="/">Companies</Link>, '8' , <RiBuilding2Fill/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Companies', '8' , <RiBuilding2Fill/>,[
+    getItem(<Link to="/">Authentification</Link>, '9' , <HiLockClosed/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
-    getItem('Authentification', '9' , <HiLockClosed/>,[
-        getItem('Option 5', '5'),
-        getItem('Option 6', '6'),
-      ]),
-    getItem('Settings', '10' , <AiFillSetting/>,[
+    getItem(<Link to="/">Settings</Link>, '10' , <AiFillSetting/>,[
         getItem('Option 5', '5'),
         getItem('Option 6', '6'),
       ]),
 ]
+
+
+
 
 const Dashboard = () => {
     const [menuCollapse, setMenuCollapse]= useState(false)
@@ -145,13 +105,12 @@ const Dashboard = () => {
                         </div>
                         <hr style={{color:'rgb(233, 233, 233)', border:0, borderTop:'1px solid #CCC'}}/>
                         <div style={{display:'flex',alignItems:'center', }} >
-                        <Breadcrumb separator=">" style={{margin:'20px 0'}} >
-                            <Breadcrumb.Item>Home</Breadcrumb.Item>
-                            <Breadcrumb.Item>Dashboard</Breadcrumb.Item>
-                        </Breadcrumb>
+                         <BreadCrumb style={{padding:10, margin: 10}}/>
                         </div>
                     </Header>
-                    <Content>Content <hv/> </Content>
+                    <Content>
+                      <Layout><Tickets/></Layout>
+                    </Content>
                 </Layout>
             </Layout>
              

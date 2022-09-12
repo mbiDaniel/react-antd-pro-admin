@@ -9,5 +9,5 @@ export const routes = {
     Dashboard: {
         component: Dashboard,
         path: "/",
-    },
+    }
 }
